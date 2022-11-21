@@ -1,6 +1,6 @@
 local options = {
 	number = true,
-	relativenumber = true
+	relativenumber = true,
 }
 
 for k, v in pairs(options) do
