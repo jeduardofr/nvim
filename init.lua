@@ -29,6 +29,9 @@ Plug "saadparwaiz1/cmp_luasnip"
 Plug "nvim-lua/plenary.nvim"
 Plug("nvim-telescope/telescope.nvim", { tag = '0.1.0' })
 
+-- Rainbow parenthesis
+Plug "p00f/nvim-ts-rainbow"
+
 vim.call('plug#end')
 
 vim.cmd[[
@@ -43,4 +46,5 @@ require('plugins.lsp')
 require('plugins.completion')
 require('plugins.telescope')
 require('plugins.treesitter')
+require('plugins.ts-rainbow')
 
