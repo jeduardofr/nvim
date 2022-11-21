@@ -1,4 +1,5 @@
 local cmp = require "cmp"
+local lspkind = require "lspkind"
 
 cmp.setup {
 	mapping = {
@@ -10,6 +11,16 @@ cmp.setup {
 			select = true
 		},
 		["<c-space>"] = cmp.mapping.complete(),
+	},
+	formatting = {
+		format = lspkind.cmp_format {
+			with_text = true,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[LSP]",
+				path = "[path]",
+			},
+		},
 	},
 	sources = {
 		{ name = "nvim_lua" },

@@ -17,6 +17,10 @@ Plug "hrsh7th/cmp-buffer"
 Plug "hrsh7th/cmp-path"
 Plug "hrsh7th/cmp-nvim-lsp"
 Plug "hrsh7th/cmp-nvim-lua"
+Plug "onsails/lspkind.nvim"
+
+-- Treesitter
+Plug "nvim-treesitter/nvim-treesitter"
 
 -- Snippets
 Plug "saadparwaiz1/cmp_luasnip"
@@ -38,4 +42,5 @@ vim.cmd[[
 require('plugins.lsp')
 require('plugins.completion')
 require('plugins.telescope')
+require('plugins.treesitter')
 
