@@ -4,7 +4,8 @@ local options = {
 	tabstop = 4,
 	shiftwidth = 4,
 	softtabstop = 4,
-	scrolloff = 5
+	scrolloff = 5,
+	termguicolors = true,
 }
 
 for k, v in pairs(options) do
@@ -21,6 +22,7 @@ end
 
 map("", "<Tab>", ":tabn<CR>", { silent = true })
 map("", "<S-Tab>", ":tabp<CR>", { silent = true })
+map("", "<C-t>", ":NvimTreeToggle<CR>", { silent = true })
 
 vim.opt.listchars = {
   eol = '⤶',

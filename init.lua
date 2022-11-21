@@ -32,6 +32,13 @@ Plug("nvim-telescope/telescope.nvim", { tag = '0.1.0' })
 -- Rainbow parenthesis
 Plug "p00f/nvim-ts-rainbow"
 
+-- Git
+Plug "sindrets/diffview.nvim"
+Plug "nvim-tree/nvim-web-devicons"
+
+-- File-tree
+Plug "nvim-tree/nvim-tree.lua"
+
 vim.call('plug#end')
 
 vim.cmd[[
@@ -47,4 +54,6 @@ require('plugins.completion')
 require('plugins.telescope')
 require('plugins.treesitter')
 require('plugins.ts-rainbow')
+require('plugins.tree')
+require('plugins.diffview')
 
