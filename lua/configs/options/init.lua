@@ -21,3 +21,7 @@ end
 
 map("", "<Tab>", ":tabn<CR>", { silent = true })
 map("", "<S-Tab>", ":tabp<CR>", { silent = true })
+
+vim.opt.listchars = {
+  eol = '⤶',
+}

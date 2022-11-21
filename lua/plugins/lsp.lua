@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- this part is telling Neovim to use the lsp server
-local servers = { 'gopls' }
+local servers = { 'gopls', 'tsserver', 'pyright' }
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
