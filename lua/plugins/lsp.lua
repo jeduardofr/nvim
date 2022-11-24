@@ -19,14 +19,18 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
     vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
 
+vim.cmd[[
+	autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+]]
+
 -- this part is telling Neovim to use the lsp server
-local servers = { 'gopls', 'tsserver', 'pyright' }
+local servers = { 'gopls', 'tsserver', 'pyright', 'csharp_ls' }
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,

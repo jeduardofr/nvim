@@ -35,9 +35,13 @@ Plug "p00f/nvim-ts-rainbow"
 -- Git
 Plug "sindrets/diffview.nvim"
 Plug "nvim-tree/nvim-web-devicons"
+Plug "TimUntersberger/neogit"
 
 -- File-tree
 Plug "nvim-tree/nvim-tree.lua"
+
+-- Autopairs
+Plug 'windwp/nvim-autopairs'
 
 vim.call('plug#end')
 
@@ -57,3 +61,5 @@ require('plugins.ts-rainbow')
 require('plugins.tree')
 require('plugins.diffview')
 
+local neogit = require('neogit')
+neogit.setup {}

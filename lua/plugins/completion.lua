@@ -1,5 +1,11 @@
 local cmp = require "cmp"
 local lspkind = require "lspkind"
+local autopairs = require "nvim-autopairs" 
+local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+
+autopairs.setup({
+	disable_filetype = { "TelescopePrompt", "vim" },
+})
 
 cmp.setup {
 	mapping = {
@@ -12,7 +18,8 @@ cmp.setup {
 		},
 		["<c-space>"] = cmp.mapping.complete(),
 	},
-	formatting = {
+	format = {
+		async = true,
 		format = lspkind.cmp_format {
 			with_text = true,
 			menu = {
@@ -29,3 +36,8 @@ cmp.setup {
 		{ name = "nvim_lua" },
 	}
 }
+
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
