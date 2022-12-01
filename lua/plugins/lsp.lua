@@ -30,7 +30,7 @@ vim.cmd[[
 ]]
 
 -- this part is telling Neovim to use the lsp server
-local servers = { 'gopls', 'tsserver', 'pyright', 'csharp_ls' }
+local servers = { 'gopls', 'tsserver', 'pyright', 'csharp_ls', 'dockerls', 'yamlls' }
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,

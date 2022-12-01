@@ -43,6 +43,12 @@ Plug "nvim-tree/nvim-tree.lua"
 -- Autopairs
 Plug 'windwp/nvim-autopairs'
 
+-- Indent blankline
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+-- Comments
+Plug 'numToStr/Comment.nvim'
+
 vim.call('plug#end')
 
 vim.cmd[[
@@ -60,6 +66,6 @@ require('plugins.treesitter')
 require('plugins.ts-rainbow')
 require('plugins.tree')
 require('plugins.diffview')
+require('plugins.blankline')
+require('plugins.comments')
 
-local neogit = require('neogit')
-neogit.setup {}
