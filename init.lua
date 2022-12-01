@@ -49,6 +49,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 -- Comments
 Plug 'numToStr/Comment.nvim'
 
+-- Harpoon
+Plug 'ThePrimeagen/harpoon'
+
 vim.call('plug#end')
 
 vim.cmd[[
@@ -56,6 +59,9 @@ vim.cmd[[
 	colorscheme tokyonight-night
 	let mapleader=" "
 	syntax on
+
+	set colorcolumn=100
+	hi ColorColumn ctermbg=238
 ]]
 
 -- Initialize the lsp config
@@ -68,4 +74,5 @@ require('plugins.tree')
 require('plugins.diffview')
 require('plugins.blankline')
 require('plugins.comments')
+require('plugins.harpoon')
 
