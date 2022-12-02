@@ -23,9 +23,9 @@ require("harpoon").setup({
 local silent = { silent = true }
 vim.keymap.set('n', '<leader>a', function() require('harpoon.mark').add_file() end, silent)
 vim.keymap.set('n', '<C-e>', function() require('harpoon.ui').toggle_quick_menu() end, silent)
-vim.keymap.set('n', '<F2>', function() require('harpoon.ui').nav_file(1) end, silent)
-vim.keymap.set('n', '<F3>', function() require('harpoon.ui').nav_file(2) end, silent)
-vim.keymap.set('n', '<F4>', function() require('harpoon.ui').nav_file(3) end, silent)
-vim.keymap.set('n', '<F5>', function() require('harpoon.ui').nav_file(4) end, silent)
-vim.keymap.set('n', '<F6>', function() require('harpoon.ui').nav_file(5) end, silent)
+vim.keymap.set('n', '<A-y>', function() require('harpoon.ui').nav_file(1) end, silent)
+vim.keymap.set('n', '<A-u>', function() require('harpoon.ui').nav_file(2) end, silent)
+vim.keymap.set('n', '<A-i>', function() require('harpoon.ui').nav_file(3) end, silent)
+vim.keymap.set('n', '<A-o>', function() require('harpoon.ui').nav_file(4) end, silent)
+vim.keymap.set('n', '<A-p>', function() require('harpoon.ui').nav_file(5) end, silent)
 
