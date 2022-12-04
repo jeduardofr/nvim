@@ -40,6 +40,28 @@ for _, lsp in pairs(servers) do
     }
 end
 
+require('lspconfig').rust_analyzer.setup({
+    on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
+
 -- this is for diagnositcs signs on the line number column
 -- use this to beautify the plain E W signs to more fun ones
 -- !important nerdfonts needs to be setup for this to work in your terminal

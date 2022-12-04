@@ -18,8 +18,7 @@ cmp.setup {
 		},
 		["<c-space>"] = cmp.mapping.complete(),
 	},
-	format = {
-		async = true,
+	formatting = {
 		format = lspkind.cmp_format {
 			with_text = true,
 			menu = {

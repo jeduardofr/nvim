@@ -6,6 +6,7 @@ local options = {
 	softtabstop = 4,
 	scrolloff = 5,
 	termguicolors = true,
+	cursorline = true,
 }
 
 for k, v in pairs(options) do
