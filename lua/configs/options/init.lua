@@ -24,6 +24,7 @@ end
 map("", "<Tab>", ":tabn<CR>", { silent = true })
 map("", "<S-Tab>", ":tabp<CR>", { silent = true })
 map("", "<C-t>", ":NvimTreeToggle<CR>", { silent = true })
+map("", "<C-c>", 'vi\'"+y', { silent = true })
 
 vim.opt.listchars = {
   eol = '⤶',

@@ -10,6 +10,9 @@ Plug 'neovim/nvim-lspconfig'
 
 -- Theme
 Plug('folke/tokyonight.nvim', { branch = 'main' })
+Plug 'bluz71/vim-nightfly-colors'
+Plug 'olivercederborg/poimandres.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 
 -- Completion
 Plug "hrsh7th/nvim-cmp"
@@ -20,7 +23,8 @@ Plug "hrsh7th/cmp-nvim-lua"
 Plug "onsails/lspkind.nvim"
 
 -- Treesitter
-Plug "nvim-treesitter/nvim-treesitter"
+Plug("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })
+Plug 'nvim-treesitter/playground'
 
 -- Snippets
 Plug "saadparwaiz1/cmp_luasnip"
@@ -33,7 +37,7 @@ Plug("nvim-telescope/telescope.nvim", { tag = '0.1.0' })
 Plug "p00f/nvim-ts-rainbow"
 
 -- Git
-Plug "sindrets/diffview.nvim"
+-- Plug "sindrets/diffview.nvim"
 Plug "nvim-tree/nvim-web-devicons"
 Plug "TimUntersberger/neogit"
 
@@ -55,10 +59,16 @@ Plug 'ThePrimeagen/harpoon'
 vim.call('plug#end')
 
 vim.cmd[[
-	syntax enable
 	colorscheme tokyonight-night
+	" colorscheme nightfly
+	" colorscheme poimandres
+
+	" set background=dark
+	" colorscheme gruvbox
+
 	let mapleader=" "
-	syntax on
+	" syntax on
+	" syntax enable
 
 	set colorcolumn=100
 	hi ColorColumn ctermbg=238
@@ -71,7 +81,7 @@ require('plugins.telescope')
 require('plugins.treesitter')
 require('plugins.ts-rainbow')
 require('plugins.tree')
-require('plugins.diffview')
+-- require('plugins.diffview')
 require('plugins.blankline')
 require('plugins.comments')
 require('plugins.harpoon')
