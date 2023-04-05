@@ -30,7 +30,7 @@ vim.cmd[[
 ]]
 
 -- this part is telling Neovim to use the lsp server
-local servers = { 'tsserver', 'pyright', 'csharp_ls', 'dockerls', 'yamlls' }
+local servers = { 'tsserver', 'pyright', 'csharp_ls', 'dockerls' }
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -39,6 +39,17 @@ for _, lsp in pairs(servers) do
         }
     }
 end
+
+require('lspconfig').yamlls.setup {
+  on_attach = on_attach,
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.yaml"] = "/**/swagger.yaml"
+      }
+    }
+  }
+}
 
 require('lspconfig').gopls.setup({
 	on_attach=on_attach,
